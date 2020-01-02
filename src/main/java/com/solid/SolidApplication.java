@@ -3,6 +3,9 @@ package com.solid;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import static org.apache.commons.lang.builder.EqualsBuilder.reflectionEquals;
+import static org.apache.commons.lang.builder.HashCodeBuilder.reflectionHashCode;
+
 @SpringBootApplication
 public class SolidApplication {
 
@@ -10,4 +13,13 @@ public class SolidApplication {
     SpringApplication.run(SolidApplication.class, args);
   }
 
+  @Override
+  public int hashCode() {
+    return reflectionHashCode(this);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return reflectionEquals(obj, this);
+  }
 }
