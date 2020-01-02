@@ -13,6 +13,10 @@ public class SolidApplication {
     SpringApplication.run(SolidApplication.class, args);
   }
 
+  public boolean hello(Object object) {
+    return false;
+  }
+
   @Override
   public int hashCode() {
     return reflectionHashCode(this);
