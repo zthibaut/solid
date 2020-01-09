@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.is;
 
 public class ShoppingCartTest {
   private static final String DOVE_SOAP_PRODUCT_NAME = "Dove Soap";
@@ -20,6 +21,16 @@ public class ShoppingCartTest {
   public void setUp() {
     cart = new Cart();
   }
+
+  @Test
+  public void shouldHaveATotalOfZeroForEmptyCart() {
+    BigDecimal expectedTotal = BigDecimal.ZERO;
+
+    BigDecimal actualTotal = cart.getTotal();
+
+    assertThat(actualTotal, is(expectedTotal));
+  }
+  
 
 //  @Test
 //  public void shouldCalculateTheTotalPriceOfTheCartWhenFiveDoveSoapProductsAreAddedToTheCart() {
