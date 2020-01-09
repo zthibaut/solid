@@ -1,9 +1,7 @@
 package com.solid.shoppingcart;
 
-import java.math.BigDecimal;
-
 public class Cart {
-  public BigDecimal getTotal() {
-    return BigDecimal.ZERO;
+  public Money getTotal() {
+    return new Money(0);
   }
 }

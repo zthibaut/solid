@@ -24,9 +24,9 @@ public class ShoppingCartTest {
 
   @Test
   public void shouldHaveATotalOfZeroForEmptyCart() {
-    BigDecimal expectedTotal = BigDecimal.ZERO;
+    Money expectedTotal = new Money(0);
 
-    BigDecimal actualTotal = cart.getTotal();
+    Money actualTotal = cart.getTotal();
 
     assertThat(actualTotal, is(expectedTotal));
   }
